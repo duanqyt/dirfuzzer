@@ -38,4 +38,4 @@
 
 `dirsearch.py` → `lib/core/arguments.py` → `lib/controller/controller.py` → `lib/core/dictionary.py` → `lib/core/queue.py` → `lib/connection/requester.py` → `lib/core/fuzzer.py`
 
-# util
+# dirsearch.py
