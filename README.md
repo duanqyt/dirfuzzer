@@ -39,3 +39,19 @@
 `dirsearch.py` → `lib/core/arguments.py` → `lib/controller/controller.py` → `lib/core/dictionary.py` → `lib/core/queue.py` → `lib/connection/requester.py` → `lib/core/fuzzer.py`
 
 # dirsearch.py
+
+**dirsearch.py主要干了这几件事儿：**
+
+* 先验证下python版本符合要求，3.12下直接报错退出
+* 有个忽略警告，不知道啥东西，先忽略
+* main函数
+  * 加载配置文件,所以创建了lib/core/settings.py，给OPTIONS_FILE="options.ini",进而创建options.py。
+  * 接着自然就是读取配置文件，为了定义读取功能ConfigParser()得创建个lib.parse.config 并编写 ConfigParser，然后建立test.lib.parse并编写test_config
+  * 检测本地依赖->lib.core.installation.py，因为要拿到requirements.txt，
+
+    ```
+    REQUIREMENTS_FILE = F'{SCRIPT_PATH}requirements.txt'
+    ```
+    所以去拿这个变量，发现这个变量定义lib/core/settings.py，`SCRIPT_PATH = FileUtils.parent(__file__, 3)`,所以擦创建lib/utils/file.py去实现FileUtils类。
+
+    任务停止：parent方法未实现，接续着这个类进行编写，注意单元测试。

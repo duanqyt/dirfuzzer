@@ -1,0 +1,1 @@
+REQUIREMENTS_FILE = F'{SCRIPT_PATH}requirements.txt'
